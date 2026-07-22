@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS messages (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  text TEXT,
+  image_url TEXT,
+  created_at INTEGER NOT NULL
+);

@@ -1,0 +1,39 @@
+{
+  "name": "cloud-chat",
+  "displayName": "Cloud Chat",
+  "description": "Minimal cloud chat room: password-protected, history stored in Cloudflare D1, images auto-uploaded to a free image host",
+  "version": "0.2.0",
+  "publisher": "yunyuyuan",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "https://github.com/yunyuyuan/vscode-simple-chat" },
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Other"],
+  "main": "./extension.js",
+  "activationEvents": [],
+  "contributes": {
+    "commands": [
+      { "command": "cloudchat.open", "title": "Cloud Chat: Open" },
+      { "command": "cloudchat.setServer", "title": "Cloud Chat: Set Server URL" }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        { "id": "cloudchat", "title": "Cloud Chat", "icon": "media/icon.svg" }
+      ]
+    },
+    "views": {
+      "cloudchat": [
+        { "type": "webview", "id": "cloudchat.chatView", "name": "Cloud Chat" }
+      ]
+    },
+    "configuration": {
+      "title": "Cloud Chat",
+      "properties": {
+        "cloudchat.serverUrl": {
+          "type": "string",
+          "default": "",
+          "description": "Cloudflare Worker URL, e.g. https://cloudchat.xxx.workers.dev"
+        }
+      }
+    }
+  }
+}
